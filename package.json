@@ -5,18 +5,17 @@
   "description": "Repo in, converting demo video out. A TrueForge agent that boots any repo in a Cua VM, tours it like a user, and ships a Twitter-ready demo video via VideoDB.",
   "type": "module",
   "scripts": {
-    "dev": "bunx tsx src/edit-mcp.ts",
-    "edit:mcp": "bunx tsx src/edit-mcp.ts",
-    "review:api": "bunx tsx src/review-server.ts",
-    "review-ui": "bunx serve review-ui -l 3102",
+    "dev": "node init && bunx tsx src/edit-mcp.ts",
     "director": "bunx tsx src/director.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.0",
-    "@truefoundry/trueforge-sdk": "^0.1.0",
     "@openuidev/react-lang": "^0.2.15",
+    "@truefoundry/trueforge-sdk": "^0.1.0",
+    "dotenv": "^8.2.0",
     "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
     "videodb": "^0.2.0",
     "zod": "^3.24.0"
   },

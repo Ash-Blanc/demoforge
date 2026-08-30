@@ -23,7 +23,7 @@ if (window.gsap) {
 }
 
 /* ---------- SSE ---------- */
-const es = new EventSource(`${API}/api/events`);
+const es = new EventSource(`/events`);
 es.onmessage = (e) => {
   let ev; try { ev = JSON.parse(e.data); } catch { return; }
   switch (ev.type) {
@@ -99,7 +99,7 @@ async function decide(approved) {
   $('gateModal').classList.remove('show');
   if (!id) return;
   currentApprovalId = null;
-  await fetch(`${API}/api/decide`, {
+  await fetch(`${API}/approvals/${id}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ approvalId: id, approved }),
