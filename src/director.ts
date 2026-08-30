@@ -2,11 +2,10 @@
  * DemoForge director — drives one full pipeline run through TrueForge.
  *
  * Prereqs:
- *   1. TrueForge running: bun run dev (localhost:8791)
+ *   1. TrueForge running: npx @truefoundry/trueforge (localhost:8790)
  *   2. Model provider configured in the TrueForge UI
  *   3. Connectors registered: cua-driver, videodb, demoforge-edit
- *   4. Edit MCP server running: bun run edit:mcp (localhost:3101)
- *   5. Review console open: bun run review-ui:dev (localhost:5173)
+ *   4. Edit MCP server running: bun run dev (localhost:3101 — console + MCP)
  *
  * Usage: bun run director -- <github-repo-url>
  */
@@ -64,7 +63,7 @@ async function main() {
     else if (t.includes("subagent")) console.log(`\n🤖 ${t}`);
   }
 
-  console.log("\n\n✅ Turn complete. Review rough cuts at http://localhost:3102");
+  console.log("\n\n✅ Turn complete. Review rough cuts at http://localhost:3101");
 }
 
 main().catch((err: Error) => {

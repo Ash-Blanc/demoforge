@@ -4,5 +4,5 @@ dist/
 *.db-journal
 *.mp4
 *.db
-.env
 .DS_Store
+config.bat
